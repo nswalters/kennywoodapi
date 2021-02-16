@@ -1,0 +1,29 @@
+[
+    {
+        "model": "kennywoodapi.itinerary",
+        "pk": 1,
+        "fields": {
+            "visitor": 1,
+            "attraction": 1,
+            "time": "2021-02-23T08:22:00.000Z"
+        }
+    },
+    {
+        "model": "kennywoodapi.itinerary",
+        "pk": 2,
+        "fields": {
+            "visitor": 1,
+            "attraction": 2,
+            "time": "2021-02-23T09:15:00.000Z"
+        }
+    },
+    {
+        "model": "kennywoodapi.itinerary",
+        "pk": 3,
+        "fields": {
+            "visitor": 1,
+            "attraction": 4,
+            "time": "2021-02-23T10:42:00.000Z"
+        }
+    }
+]
