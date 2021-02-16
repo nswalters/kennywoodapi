@@ -1,0 +1,26 @@
+[
+    {
+        "model": "kennywoodapi.attractioncategory",
+        "pk": 1,
+        "fields": {
+            "name": "Rides",
+            "description": "Attractions where visitors sit in a vehicle. Roller coasters, ferris wheels, etc."
+        }
+    },
+    {
+        "model": "kennywoodapi.attractioncategory",
+        "pk": 2,
+        "fields": {
+            "name": "Games",
+            "description": "Games of skill and arcade games"
+        }
+    },
+    {
+        "model": "kennywoodapi.attractioncategory",
+        "pk": 3,
+        "fields": {
+            "name": "Themed",
+            "description": "Visitors walk through themed structures. Haunted houses, wax museums, etc."
+        }
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "model": "kennywoodapi.attractionrating",
+        "pk": 1,
+        "fields": {
+            "visitor": 1,
+            "attraction": 1,
+            "rating": 5,
+            "note": "This place was awesome!!! Highly recommend for families of all sizes!"
+        }
+    },
+    {
+        "model": "kennywoodapi.attractionrating",
+        "pk": 2,
+        "fields": {
+            "visitor": 3,
+            "attraction": 1,
+            "rating": 3,
+            "note": "I have a child in a wheelchair and getting into the attraction was a little difficult. Luckily we had a lovely employee who helped us get in, eventually, and we were able to see the show. I would recommend better handicap access in the future. Show was great though once we got to see it!"
+        }
+    },
+    {
+        "model": "kennywoodapi.attractionrating",
+        "pk": 3,
+        "fields": {
+            "visitor": 5,
+            "attraction": 5,
+            "rating": 4,
+            "note": "This was a pretty cool attraction, but the lines were so long!"
+        }
+    }
+]

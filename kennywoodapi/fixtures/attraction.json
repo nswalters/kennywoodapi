@@ -1,0 +1,57 @@
+[
+    {
+        "model": "kennywoodapi.attraction",
+        "pk": 1,
+        "fields": {
+            "name": "Lights, Camera, Action!: Extreme Stunt Show",
+            "area": 5,
+            "category": 3,
+            "max_occupancy": 150,
+            "height_requirement_inches": null
+        }
+    },
+    {
+        "model": "kennywoodapi.attraction",
+        "pk": 2,
+        "fields": {
+            "name": "Adventure Alley Games",
+            "area": 1,
+            "category": 2,
+            "max_occupancy": null,
+            "height_requirement_inches": null
+        }
+    },
+    {
+        "model": "kennywoodapi.attraction",
+        "pk": 3,
+        "fields": {
+            "name": "ZoomJets",
+            "area": 2,
+            "category": 1,
+            "max_occupancy": 10,
+            "height_requirement_inches": 36
+        }
+    },
+    {
+        "model": "kennywoodapi.attraction",
+        "pk": 4,
+        "fields": {
+            "name": "Hall of Presidents",
+            "area": 3,
+            "category": 3,
+            "max_occupancy": 100,
+            "height_requirement_inches": null
+        }
+    },
+    {
+        "model": "kennywoodapi.attraction",
+        "pk": 5,
+        "fields": {
+            "name": "Living with the Land",
+            "area": 4,
+            "category": 1,
+            "max_occupancy": 40,
+            "height_requirement_inches": 36
+        }
+    }
+]

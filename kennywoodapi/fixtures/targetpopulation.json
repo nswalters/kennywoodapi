@@ -1,0 +1,23 @@
+[
+    {
+        "model": "kennywoodapi.targetpopulation",
+        "pk": 1,
+        "fields": {
+            "name": "All"
+        }
+    },
+    {
+        "model": "kennywoodapi.targetpopulation",
+        "pk": 2,
+        "fields": {
+            "name": "Kids"
+        }
+    },
+    {
+        "model": "kennywoodapi.targetpopulation",
+        "pk": 3,
+        "fields": {
+            "name": "Adults"
+        }
+    }
+]
