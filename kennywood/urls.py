@@ -7,6 +7,7 @@ from kennywoodapi.views import *
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'areas', ParkAreaViewset, 'parkarea')
+router.register(r'attractions', AttractionViewset, 'attraction')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
