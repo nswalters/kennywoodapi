@@ -11,7 +11,7 @@
         "model": "kennywoodapi.parkarea",
         "pk": 2,
         "fields": {
-            "name": "Kidoplis",
+            "name": "Kid-opolis",
             "target_population": 2
         }
     },
