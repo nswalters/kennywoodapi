@@ -2,7 +2,7 @@ import json
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from kennywoodapi.models import ParkArea, TargetPopulation
+from kennywoodapi.models import ParkArea, TargetPopulation, Attraction, AttractionCategory
 
 
 class ParkAreaTests(APITestCase):
@@ -54,6 +54,32 @@ class ParkAreaTests(APITestCase):
         )
         kids_parkarea.save()
 
+        # Create attraction category
+        category = AttractionCategory.objects.create(
+            name="Rides",
+            description="Test Rides Description"
+        )
+        category.save()
+
+        # Create attractions
+        first_attraction = Attraction.objects.create(
+            name="First Attraction",
+            area=adult_parkarea,
+            category=category,
+            max_occupancy=123,
+            height_requirement_inches=36
+        )
+        first_attraction.save()
+
+        second_attraction = Attraction.objects.create(
+            name="Second Attraction",
+            area=adult_parkarea,
+            category=category,
+            max_occupancy=222,
+            height_requirement_inches=22
+        )
+        second_attraction.save()
+
     def test_list_park_areas(self):
         """
         Get list of park areas
@@ -81,3 +107,17 @@ class ParkAreaTests(APITestCase):
         self.assertEqual(json_response["id"], 1)
         self.assertEqual(json_response["name"], "Adult Park Area")
         self.assertEqual(json_response["target_population"]["name"], "Adults")
+
+    def test_retrieve_area_attractions(self):
+        """Get a list of attractions based on the area given"""
+        url = "/areas/1/attractions"
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token)
+        response = self.client.get(url, None, format='json')
+        json_response = json.loads(response.content)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(json_response), 2)
+        self.assertEqual(json_response[0]["id"], 1)
+        self.assertEqual(json_response[0]["name"], "First Attraction")
+        self.assertEqual(json_response[1]["id"], 2)
+        self.assertEqual(json_response[1]["name"], "Second Attraction")

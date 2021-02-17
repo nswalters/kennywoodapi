@@ -1,10 +1,12 @@
 from django.http import HttpResponseServerError
-from rest_framework.viewsets import ViewSet
+from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.viewsets import ViewSet
 from rest_framework import serializers, status
 
-from kennywoodapi.models import ParkArea
+from kennywoodapi.models import ParkArea, Attraction
 from .targetpopulation import TargetPopulationSerializer
+from .attractioncategory import AttractionCategorySerializer
 
 
 class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
@@ -50,3 +52,28 @@ class ParkAreaViewset(ViewSet):
         )
 
         return Response(json_areas.data)
+
+    @action(methods=['get'], detail=True)
+    def attractions(self, request, pk=None):
+        """Interact with attractions based on the park area they are in"""
+
+        if request.method == "GET":
+            attractions = Attraction.objects.filter(area=pk)
+            serializer = ParkAreaAttractionSerializer(
+                attractions, many=True, context={"request": request}
+            )
+            return Response(serializer.data)
+
+
+class ParkAreaAttractionSerializer(serializers.HyperlinkedModelSerializer):
+
+    category = AttractionCategorySerializer(many=False)
+
+    class Meta:
+        model = Attraction
+        url = serializers.HyperlinkedIdentityField(
+            view_name="attraction-detail",
+            lookup_field="id"
+        )
+        fields = ('id', 'url', 'name', 'max_occupancy',
+                  'height_requirement_inches', 'category')

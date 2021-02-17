@@ -59,6 +59,7 @@ class AttractionTests(APITestCase):
             name="Rides",
             description="Test Rides Description"
         )
+        category.save()
 
         # Create attractions
         first_attraction = Attraction.objects.create(
@@ -68,14 +69,16 @@ class AttractionTests(APITestCase):
             max_occupancy=123,
             height_requirement_inches=36
         )
+        first_attraction.save()
 
-        seond_attraction = Attraction.objects.create(
+        second_attraction = Attraction.objects.create(
             name="Second Attraction",
             area=kids_parkarea,
             category=category,
             max_occupancy=222,
             height_requirement_inches=22
         )
+        second_attraction.save()
 
     def test_list_attractions(self):
         """
