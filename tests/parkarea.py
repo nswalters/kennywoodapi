@@ -66,3 +66,17 @@ class ParkAreaTests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(json_response), 2)
+
+    def test_retrieve_single_park_area(self):
+        """
+        Get a specific park area
+        """
+
+        url = "/areas/1"
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token)
+        response = self.client.get(url, None, format='json')
+        json_response = json.loads(response.content)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(json_response["id"], 1)
+        self.assertEqual(json_response["name"], "Adult Park Area")
