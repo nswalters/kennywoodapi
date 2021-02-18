@@ -1,5 +1,8 @@
 # Kennywood Scheduling API
 
+## Overview
+For this project, you are going to create a database, and a supporting Django REST Framework API that will allow people to build a schedule of attractions to visit when they go to Kennywood Park.
+
 ## Setup
 
 1. Clone this repository and change to the directory in the terminal.
